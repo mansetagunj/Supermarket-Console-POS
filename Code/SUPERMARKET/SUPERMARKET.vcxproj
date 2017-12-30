@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3300C462-BFAF-4ECC-B348-A1D7D7E2508E}</ProjectGuid>
+    <RootNamespace>SUPERMARKET</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.26419.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)\$(Configuration)\$(ProjectName).exe" "$(ProjectDir)\src\$(ProjectName).exe"</Command>
+      <Message>Copying .exe to src folder</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>./../include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)\$(Configuration)\$(ProjectName).exe" "$(ProjectDir)\src\$(ProjectName).exe"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copying .exe to src folder</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\resources\admin.supermarket" />
+    <None Include="..\resources\billHistory.supermarket" />
+    <None Include="..\resources\cart.supermarket" />
+    <None Include="..\resources\custid_card_bill_data.supermarket" />
+    <None Include="..\resources\customer.supermarket" />
+    <None Include="..\resources\employee.supermarket" />
+    <None Include="..\resources\product.supermarket" />
+    <None Include="..\SUPERMARKET_EXE\SUPERMARKET_EXE.vdproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\CAdmin.h" />
+    <ClInclude Include="include\CAdminTransaction.h" />
+    <ClInclude Include="include\CBill.h" />
+    <ClInclude Include="include\CBillHistory.h" />
+    <ClInclude Include="include\CCard.h" />
+    <ClInclude Include="include\CCart.h" />
+    <ClInclude Include="include\CCategory.h" />
+    <ClInclude Include="include\CCustomer.h" />
+    <ClInclude Include="include\CCustomerTransaction.h" />
+    <ClInclude Include="include\CEmployee.h" />
+    <ClInclude Include="include\CEmployeeTransaction.h" />
+    <ClInclude Include="include\CError.h" />
+    <ClInclude Include="include\COffers.h" />
+    <ClInclude Include="include\common_helper.h" />
+    <ClInclude Include="include\CProduct.h" />
+    <ClInclude Include="include\CTransaction.h" />
+    <ClInclude Include="include\CUserInterface.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CAdmin.cpp" />
+    <ClCompile Include="src\CAdminTransaction.cpp" />
+    <ClCompile Include="src\CBill.cpp" />
+    <ClCompile Include="src\CCard.cpp" />
+    <ClCompile Include="src\CCart.cpp" />
+    <ClCompile Include="src\CCategory.cpp" />
+    <ClCompile Include="src\CCustomer.cpp" />
+    <ClCompile Include="src\CCustomerTransaction.cpp" />
+    <ClCompile Include="src\CEmployee.cpp" />
+    <ClCompile Include="src\CEmployeeTransaction.cpp" />
+    <ClCompile Include="src\CError.cpp" />
+    <ClCompile Include="src\COffers.cpp" />
+    <ClCompile Include="src\common_helper.cpp" />
+    <ClCompile Include="src\CProduct.cpp" />
+    <ClCompile Include="src\CTransaction.cpp" />
+    <ClCompile Include="src\CUserInterface.cpp" />
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
