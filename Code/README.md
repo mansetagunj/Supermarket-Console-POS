@@ -8,4 +8,5 @@ After building the project, the SUPERMARKET.exe can be found in the Src folder. 
 
 The entire code base was designed and developed in 70 hours.   
 I did not get the opportunity to test it thoroughly and correct some known issues.   
-There might be some design as well as implementation flaws in it, let me know to discuss how the design could be made better or to just point out the flaws in the design and/or code.  
+There might be some design as well as implementation flaws in it, let me know to discuss how the design could be made better or to just point out the flaws in the design and/or code.   
+There is a lack of comments in the code. But I think the proper flow and details can be found and understood in the design diagrams provided with the project.
